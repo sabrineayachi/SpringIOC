@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="paysBean" class="spring.Pays" scope="prototype">
+ <property name="idpays" value="11"></property>
+  <property name="libelle" value="Tunsie"></property>
+  <property name="paysvoisins">
+      <list>
+         <value>Mouritanie</value>
+         <value>Algérie</value>
+         <value>Lybie</value>
+      </list>
+      </property>
+</bean>
+
+<bean id="clientBean" class="spring.Client" >
+  <property name="code" value="11"></property>
+  <property name="nom" value="ayachi"></property>
+  <property name="prenom" value="sabrine"></property>
+  <property name="pays" ref="paysBean"></property>
+</bean>
+
+
+
+</beans>
